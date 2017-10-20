@@ -1,4 +1,4 @@
-<h1>Home Page</h1>
+<h1>Bloc Chat</h1>
 <ul>rooms
-  <li ng-repeat='room in home.rooms'>{{room}}</li>
+  <li ng-repeat='room in home.rooms | orderBy:$value'>{{room.$value}}</li>
 </ul>

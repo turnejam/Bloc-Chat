@@ -1,7 +1,9 @@
-(function() {
+(function(){
     function HomeCtrl(Room) {
-      this.rooms = Room.all
-    }
+      //try the thing with pushing the array?
+      this.room = Room;
+      this.rooms = Room.all;
+      };
 
     angular
         .module('blocChat')
