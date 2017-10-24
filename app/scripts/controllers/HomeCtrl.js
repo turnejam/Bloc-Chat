@@ -1,11 +1,19 @@
 (function(){
-    function HomeCtrl(Room) {
-      //try the thing with pushing the array?
+    function HomeCtrl(Room, $uibModal) {
       this.room = Room;
       this.rooms = Room.all;
       };
 
+      this.createRoom = function(){
+        $uibModal.open({
+          animation: $scope.animationsEnabled,
+          templateUrl: '/scripts/templates/create_room.html',
+          size: 'sm',
+          controller: 'ModalCtrl as modal'
+        });
+      };
+
     angular
         .module('blocChat')
-        .controller('HomeCtrl', ['Room', HomeCtrl]);
+        .controller('HomeCtrl', ['Room', '$uibModal', HomeCtrl]);
 })();
