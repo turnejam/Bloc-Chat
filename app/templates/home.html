@@ -1,5 +1,8 @@
+<div class='left-bar'>
 <h1>Bloc Chat</h1>
-<ul>rooms
-  <li ng-repeat='room in home.rooms | orderBy:$value'>{{room.$value}}</li>
-</ul>
-<button type='button' ng-click='home.newRoom()'>Create Room</button>
+<h2>Rooms</h2>
+<div class='rooms'>
+  <h4 ng-repeat='room in home.rooms | orderBy:$value'>{{room.$value}}</h4>
+</div>
+<button ng-click='home.newRoom()'>Create Room</button>
+</div>
