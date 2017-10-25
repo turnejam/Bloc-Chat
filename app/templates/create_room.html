@@ -1,11 +1,9 @@
 <div class='modal-box'>
-<form>
-  <h1> Create Room </h1>
-  <p>Name:</p>
- <input type='text' ng-model='$ctrl.name'>
- <p>
-   <button ng-click='submit()'>Create</button>
-   <button ng-click='cancel()'>Cancel</button>
- </p>
- </form>
- </div>
+    <h1> Create Room </h1>
+    <p>Name:</p>
+    <input type='text' ng-model='modal.name'>
+    <p>
+      <button ng-click='modal.createRoom()'>Create</button>
+      <button ng-click='modal.cancel()'>Cancel</button>
+    </p>
+</div>
