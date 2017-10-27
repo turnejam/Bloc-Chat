@@ -1,17 +1,25 @@
 (function(){
     function HomeCtrl(Room, $uibModal) {
-      this.room = Room;
       this.rooms = Room.all;
+
+      this.currentRoom = {};
+
+      this.currentMessages = {};
+
+      this.setRoom = function(roomId){
+        this.currentRoom = room; //?????
       };
 
-      this.createRoom = function(){
-        $uibModal.open({
-          animation: $scope.animationsEnabled,
-          templateUrl: '/scripts/templates/create_room.html',
-          size: 'sm',
+      this.newRoom = function(){
+          $uibModal.open({
+          animation: this.animationsEnabled,
+          templateUrl: '/templates/create_room.html',
           controller: 'ModalCtrl as modal'
         });
       };
+
+      
+    };
 
     angular
         .module('blocChat')

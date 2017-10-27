@@ -1,8 +1,14 @@
-<div class='left-bar'>
-<h1>Bloc Chat</h1>
-<h2>Rooms</h2>
+<div class='room-menu'>
+<h1>Bloc Chat</h1><button ng-click='home.newRoom()'>Create Room</button>
 <div class='rooms'>
-  <h4 ng-repeat='room in home.rooms | orderBy:$value'>{{room.$value}}</h4>
+  <h4 ng-repeat='room in home.rooms'><span ng-click="home.setRoom()">{{room.$value}}</span></h4>
 </div>
-<button ng-click='home.newRoom()'>Create Room</button>
+</div>
+<div class='chat-room'>
+  <div class='room-title'>
+  <h2 class='name'>{{home.currentRoom.title}}</h2>
+  </div>
+<div class='messages'>
+  <p ng-repeat='message in messages'>{{messagecontent}}</p> <!--wishful coding-->
+</div>
 </div>
