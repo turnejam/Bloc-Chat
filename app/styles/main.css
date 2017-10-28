@@ -12,3 +12,27 @@
   float: right;
   background-color: lightblue;
 }
+
+.chat{
+  border: 2px solid black;
+}
+
+.message{
+  border: 1px solid grey;
+}
+
+.username{
+  text-align: left;
+  display: inline;
+  border-bottom: 1px solid black;
+}
+
+.sentat{
+  float: right;
+  font-weight: bold;
+  display: inline;
+}
+
+.content{
+
+}

@@ -1,13 +1,11 @@
 (function(){
-    function HomeCtrl(Room, $uibModal) {
+    function HomeCtrl(Room, Message, $uibModal) {
       this.rooms = Room.all;
 
-      this.currentRoom = {};
-
-      this.currentMessages = {};
-
       this.setRoom = function(roomId){
-        this.currentRoom = room; //?????
+        this.currentRoom = roomId;
+        this.currentMessages =  Message.getByRoomId(this.currentRoom.$id);
+        console.log(this.currentMessages)
       };
 
       this.newRoom = function(){
@@ -18,10 +16,10 @@
         });
       };
 
-      
+
     };
 
     angular
         .module('blocChat')
-        .controller('HomeCtrl', ['Room', '$uibModal', HomeCtrl]);
+        .controller('HomeCtrl', ['Room', 'Message', '$uibModal', HomeCtrl]);
 })();
