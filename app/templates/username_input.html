@@ -1,0 +1,5 @@
+<div class='modal-box' data-backdrop= 'static' data-keyboard='false'>
+  <h1>Set Your Username:</h1>
+  <input type='text' ng-model='user.name' required>
+  <button ng-click='user.setUserName(user.name)' ng-disabled='user.name == null'>Submit</button>
+</div>

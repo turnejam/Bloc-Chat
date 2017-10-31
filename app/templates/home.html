@@ -1,5 +1,7 @@
 <div class='room-menu'>
-<h1>Bloc Chat</h1><button ng-click='home.newRoom()'>Create Room</button>
+<h1>Bloc Chat</h1>
+<h2>Welcome, {{home.user}}!</h2>
+<button ng-click='home.newRoom()'>Create Room</button>
 <div class='rooms'>
   <h4 ng-repeat='room in home.rooms'><span ng-click="home.setRoom(room)">{{room.$value}}</span></h4>
 </div>
