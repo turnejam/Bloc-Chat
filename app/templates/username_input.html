@@ -1,5 +1,9 @@
-<div class='modal-box' data-backdrop= 'static' data-keyboard='false'>
+<div class='modal-box'>
+  <div class='modal-title'>
   <h1>Set Your Username:</h1>
-  <input type='text' ng-model='user.name' required>
-  <button ng-click='user.setUserName(user.name)' ng-disabled='user.name == null'>Submit</button>
+</div>
+  <div class='form-group'>
+  <input type='text' ng-model='modal.name' required>
+  <button ng-click='modal.setUserName(modal.name)' ng-disabled='modal.name == null'>Submit</button>
+</div>
 </div>

@@ -1,20 +1,35 @@
 <div class='room-menu'>
+<div class='page-header'>
 <h1>Bloc Chat</h1>
-<h2>Welcome, {{home.user}}!</h2>
+</div>
+</h1>
 <button ng-click='home.newRoom()'>Create Room</button>
+<button ng-click='home.changeUser()'>Change User</button>
 <div class='rooms'>
-  <h4 ng-repeat='room in home.rooms'><span ng-click="home.setRoom(room)">{{room.$value}}</span></h4>
+  <ul>
+  <li class='room-options' ng-repeat='room in home.rooms' ng-click="home.setRoom(room)">{{room.$value}}</li>
+</ul>
 </div>
 </div>
 <div class='chat-room'>
   <div class='room-title'>
-  <h2 class='name'>{{home.currentRoom.$value}}</h2>
-<div class='chat'>
+  <h2 class='name' ng-show='home.roomSelected'><strong>Room:</strong> {{home.currentRoom.$value}} <strong>Chatting As:</strong> {{home.user}}</h2>
+  <h2 class = 'opening' ng-hide = 'home.roomSelected'> Welcome, {{home.user}}. Select a room and begin chatting!</h2>
+  </div>
+<div class='chat' ng-show='home.roomSelected'>
+<div>
   <div class = 'message' ng-repeat='message in home.currentMessages'>
     <div class='username'>{{message.username}}</div>
-    <div class='sentat'>{{message.sentAt}}</div>
+    <div class='sentat'>{{message.sentAt | date : 'shortTime'}}</div>
     <div class='content'>{{message.content}}</div>
   </div>
+  <!--<p ng-hide='div.message'>No messages yet...</p>-->
 </div>
+</div>
+<div class='messager' ng-show='home.roomSelected'>
+<form ng-submit='home.message()'>
+<input class='messagebar' type='text' ng-model='home.newMessage.content'>
+<input type='submit' value='Send Message'>
+</form>
 </div>
 </div>

@@ -1,5 +1,6 @@
 (function() {
   function Room($firebaseArray) {
+    this.user = '';
     var Room = {};
 
     var ref = firebase.database().ref().child("rooms");

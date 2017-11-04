@@ -1,3 +1,14 @@
+::-webkit-scrollbar {
+   -webkit-appearance: none;
+   width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+   border-radius: 4px;
+   background-color: rgba(0,0,0,.5);
+   -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
 .room-menu {
   height: 100vh;
   width: 25%;
@@ -11,10 +22,16 @@
   width: 75%;
   float: right;
   background-color: lightblue;
+  padding-left: 10px;
 }
 
 .chat{
   border: 2px solid black;
+  height: 300px;
+  margin-right: 30px;
+  overflow:auto;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .message{
@@ -33,6 +50,20 @@
   display: inline;
 }
 
-.content{
+.room-title{
+  height:35px;
+}
 
+.room-options:hover{
+  font-size: 125%;
+  cursor: pointer;
+}
+
+.messagebar{
+  width:700px;
+}
+
+button:hover{
+  cursor:pointer;
+  font-size:105%;
 }
