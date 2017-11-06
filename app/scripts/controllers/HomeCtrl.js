@@ -38,9 +38,8 @@
           keyboard: false
           });
         modalInstance.result.then(function(){
-          $scope.$apply(function(){
-          console.log('apply happening');
-        });
+          this.user = $cookies.get('blocChatCurrentUser');
+          $scope.user = this.user;
           alert("Welcome, "+this.user);
               });
       };
